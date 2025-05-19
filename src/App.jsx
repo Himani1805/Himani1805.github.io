@@ -4,6 +4,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 function App() {
+  const  resumeUrl = "https://resume-api-new.masaischool.com/profile/download/resume?resumeId=682b333ed980da4fe4fbb06e&templateName=Matty&fontSize=medium"
   return (
     <div className="min-h-screen">
       <nav className="fixed w-full bg-white bg-opacity-90 shadow-md z-50">
@@ -32,7 +33,6 @@ function App() {
       </footer>
     </div>
   );
-    const  resumeUrl = "https://resume-api-new.masaischool.com/profile/download/resume?resumeId=682b333ed980da4fe4fbb06e&templateName=Matty&fontSize=medium"
 }
 
 export default App;
