@@ -2,40 +2,58 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const Projects = () => {
   const projects = [
-    {
-      title: 'E-Commerce Dashboard',
-      description: 'A comprehensive e-commerce analytics dashboard with real-time sales tracking, inventory management, and customer insights.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express', 'Redux'],
-      image: '/images/ecommerce-dashboard.jpg',
-      githubLink: 'https://github.com/username/ecommerce-dashboard',
-      demoLink: 'https://ecommerce-dashboard.demo.com',
-      category: 'Full Stack'
-    },
-    {
-      title: 'Task Management App',
-      description: 'Modern task management application with real-time updates and team collaboration features.',
-      tech: ['React', 'Firebase', 'Tailwind CSS'],
-      image: '/images/task-management.jpg',
-      githubLink: 'https://github.com/username/task-manager',
-      demoLink: 'https://task-manager.demo.com',
+      {
+      title: 'AIIMS Clone',
+      description: 'A clone of the All India Institute of Medical Sciences (AIIMS) website, showcasing healthcare services and information.',
+      tech: ['HTML', 'CSS'],
+      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_172957_o97hsh.png',
+      githubLink: 'https://github.com/Himani1805/AIIMS-clone',
+      demoLink: 'https://aiimsup.netlify.app',
       category: 'Frontend'
     },
     {
-      title: 'Social Media Dashboard',
-      description: 'Responsive social media analytics dashboard with real-time data visualization.',
-      tech: ['React', 'Chart.js', 'Tailwind CSS', 'Redux'],
-      image: '/images/portfolio.jpg',
-      githubLink: 'https://github.com/username/social-dashboard',
-      demoLink: 'https://social-dashboard.demo.com',
+      title: 'UPIC Clone',
+      description: 'A responsive website for the Uttar Pradesh Information Commission, providing information and resources related to RTI.',
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_172342_vjtwir.png',
+      githubLink: 'https://github.com/Himani1805/upic.gov.in',
+      demoLink: 'https://upicgov.netlify.app',
       category: 'Frontend'
     },
     {
-      title: 'Blog Platform',
-      description: 'Full-featured blogging platform with markdown support and user authentication.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-      image: '/images/smart-home.jpg',
-      githubLink: 'https://github.com/username/blog-platform',
-      demoLink: 'https://blog-platform.demo.com',
+      title: 'Bluefly.com clone',
+      description: 'A clone of the Bluefly e-commerce website, featuring product listings, and a shopping cart.',
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_173902_tq8dmu.png',
+      githubLink: 'https://github.com/Himani1805/Bluefly.com',
+      demoLink: 'https://blueflycomnetlify.netlify.app',
+      category: 'Frontend'
+    },
+    {
+      title: 'Etsy Fashion Store',
+      description: 'A responsive e-commerce website for a fashion store, featuring product listings and a shopping cart.',
+      tech: ['Git','React', 'CSS', 'JavaScript', 'React Router'],
+      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_171207_jl5y1f.png',
+      githubLink: 'https://github.com/Himani1805/Etsy.com',
+      demoLink: 'https://etsycom.netlify.app/',
+      category: 'Frontend'
+    },
+    {
+      title: 'Nordstrom Rack',
+      description: 'A responsive e-commerce website for a fashion store, featuring product listings and a shopping cart.',
+      tech: ['React', 'CSS', 'JavaScript', 'Chakra UI', 'React Router'],
+      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_171121_pjjmhv.png',
+      githubLink: 'https://github.com/Himani1805/nordstromrack.com',
+      demoLink: 'https://nordstromrack-himani.netlify.app',
+      category: 'Frontend'
+    },
+    {
+      title: 'Wayfair E-commerce',
+      description: 'A fuull-stack e-commerce dashboard for wayfair website, featuring product listings, user authentication, and a shopping cart.',
+      tech: ['React', 'Chakra UI', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB'],
+      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657660/Screenshot_2025-05-19_174219_i5mcam.png',
+      githubLink: 'https://github.com/Himani1805/Wayfair.com',
+      demoLink: 'https://wayfair-com.vercel.app',
       category: 'Full Stack'
     }
   ];
@@ -113,7 +131,7 @@ const Projects = () => {
                     className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 bg-black/50 text-white rounded-full text-xs backdrop-blur-sm">
+                    <span className="px-3 py-1 text-white rounded-full text-xs backdrop-blur-sm bg-purple-600">
                       {project.category}
                     </span>
                   </div>

@@ -11,6 +11,7 @@ function App() {
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-purple-300">HS</h1>
             <div className="space-x-6">
+              <a href="#resume" className="hover:text-purple-600">Resume</a>
               <a href="#about" className="hover:text-purple-600">About</a>
               <a href="#projects" className="hover:text-purple-600">Projects</a>
               <a href="#contact" className="hover:text-purple-600">Contact</a>
