@@ -8,7 +8,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="hero min-h-screen bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white relative overflow-hidden">
+    <section className="hero min-h-screen bg-gray-900 text-white relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white opacity-10 rounded-full filter blur-3xl animate-blob"></div>
@@ -26,14 +26,14 @@ const Hero = () => {
             Crafting beautiful web experiences with modern technologies
           </p>
           <div className="space-x-4">
-            <a 
-              href="#projects" 
+            <a
+              href="#projects"
               className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-100 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               View My Work
             </a>
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all duration-300"
             >
               Get in Touch

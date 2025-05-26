@@ -1,140 +1,138 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const About = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', label: 'All' },
+    { id: 'frontend', label: 'Frontend' },
+    { id: 'backend', label: 'Backend' },
+    { id: 'database', label: 'Database' },
+    { id: 'other', label: 'Other' }
+  ];
+
   const skills = {
     frontend: [
-      { name: 'React.js', level: 90 },
-      { name: 'JavaScript (ES6+)', level: 85 },
-      { name: 'HTML5 & CSS3', level: 95 },
-      { name: 'Tailwind CSS', level: 90 }
+      { name: 'HTML', icon: '🌐', color: '#E34F26', stars: 5, category: 'frontend', description: 'Semantic markup and accessibility standards' },
+      { name: 'CSS', icon: '🎨', color: '#1572B6', stars: 5, category: 'frontend', description: 'Advanced styling, animations, and responsive design' },
+      { name: 'JavaScript', icon: '⚡', color: '#F7DF1E', stars: 5, category: 'frontend', description: 'Modern ES6+, DOM manipulation, and asynchronous patterns' },
+      { name: 'React', icon: '⚛️', color: '#61DAFB', stars: 5, category: 'frontend', description: 'Component architecture, hooks, context API, and state management' },
+      { name: 'Chakra UI', icon: '✨', color: '#319795', stars: 4, category: 'frontend', description: 'Building accessible UI components with Chakra UI library' }
     ],
     backend: [
-      { name: 'Node.js', level: 85 },
-      { name: 'Express.js', level: 80 },
-      { name: 'MongoDB', level: 75 },
-      { name: 'RESTful APIs', level: 85 }
+      { name: 'Node.js', icon: '🟢', color: '#339933', stars: 4, category: 'backend', description: 'Server-side JavaScript runtime for building scalable applications' },
+      { name: 'Express.js', icon: '🚂', color: '#000000', stars: 4, category: 'backend', description: 'RESTful API development with middleware architecture' },
+      { name: 'Python', icon: '🐍', color: '#3776AB', stars: 4, category: 'backend', description: 'Data processing, automation, and scripting' },
+      // { name: 'Django', icon: '🎯', color: '#092E20', stars: 4, category: 'backend', description: 'Full-stack Python framework for rapid development' }
+    ],
+    database: [
+      { name: 'MongoDB', icon: '🍃', color: '#47A248', stars: 4, category: 'database', description: 'Document-oriented NoSQL database with aggregation framework' },
+      { name: 'REST API', icon: '🔌', color: '#FF6B6B', stars: 4, category: 'database', description: 'Building and consuming RESTful web services' }
+    ],
+    other: [
+      { name: 'Git', icon: '📦', color: '#F05032', stars: 4, category: 'other', description: 'Version control and collaborative development workflows' },
+      // { name: 'QGIS', icon: '🗺️', color: '#589632', stars: 4, category: 'other', description: 'Geographic data analysis and visualization' },
+      // { name: 'ArcGIS', icon: '🌍', color: '#2C7AC3', stars: 4, category: 'other', description: 'Enterprise GIS solutions and spatial analysis' }
     ]
   };
 
-  const observerRef = useRef(null);
+  const SkillCard = ({ skill }) => {
+    const [isHovered, setIsHovered] = useState(false);
 
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-          }
-        });
-      },
-      { threshold: 0.1 }
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative bg-navy-900 rounded-xl overflow-hidden"
+        style={{
+          backgroundColor: '#1a1f2b',
+          minHeight: '180px',
+          transform: isHovered ? 'translateY(-5px)' : 'none',
+          transition: 'transform 0.3s ease'
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="p-6">
+          <div className="flex items-center mb-4">
+            <span className="text-3xl mr-3">{skill.icon}</span>
+            <h4 className="text-xl font-semibold text-white">{skill.name}</h4>
+          </div>
+          <div className="flex mb-3">
+            {[...Array(5)].map((_, index) => (
+              <span
+                key={index}
+                className={`text-lg ${index < skill.stars ? 'text-yellow-400' : 'text-gray-600'}`}
+              >
+                ★
+              </span>
+            ))}
+          </div>
+          <p className="text-gray-400 text-sm">{skill.description}</p>
+        </div>
+        <div
+          className="absolute bottom-0 left-0 right-0 h-1"
+          style={{ backgroundColor: skill.color }}
+        />
+      </motion.div>
     );
+  };
 
-    document.querySelectorAll('.fade-in').forEach((el) => {
-      observerRef.current.observe(el);
-    });
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, []);
-
-  const SkillBar = ({ name, level, delay }) => (
-    <div className="mb-4">
-      <div className="flex justify-between items-center mb-1">
-        <span className="text-sm font-medium text-gray-700">{name}</span>
-        <span className="text-sm font-medium text-purple-600">{level}%</span>
-      </div>
-      <div className="w-full bg-gray-200 rounded-full h-2.5">
-        <div 
-          className="bg-gradient-to-r from-purple-600 to-pink-500 h-2.5 rounded-full skill-progress"
-          style={{ 
-            width: '0%',
-            transitionDelay: `${delay}ms`
-          }}
-          data-width={`${level}%`}
-        ></div>
-      </div>
-    </div>
-  );
+  const filteredSkills = activeCategory === 'all'
+    ? Object.values(skills).flat()
+    : skills[activeCategory] || [];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="fade-in opacity-0 translate-y-8 transition-all duration-700">
-          <h2 className="text-4xl font-bold text-center mb-4">About Me</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Passionate about creating beautiful and functional web experiences
-          </p>
+    // <section className="min-h-screen py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+
+    <section className="min-h-screen py-20 bg-gradient-to-br from-white-900 to-white text-white">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="container mx-auto px-4"
+      >
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+          >
+            Skills & Tech Stack
+          </motion.h2>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xl text-gray-400 max-w-2xl mx-auto"
+          >
+            Technologies I've worked with to build modern web applications
+          </motion.p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="fade-in opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '200ms' }}>
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-semibold mb-6 text-purple-600">My Journey</h3>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                I'm a Full Stack Developer with a passion for building modern web applications.
-                With expertise in both front-end and back-end development, I create seamless
-                digital experiences that solve real-world problems.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                I believe in writing clean, maintainable code and staying up-to-date with
-                the latest web technologies and best practices.
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-8">
-            <div className="fade-in opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '400ms' }}>
-              <h3 className="text-2xl font-semibold mb-6">Frontend Skills</h3>
-              {skills.frontend.map((skill, index) => (
-                <SkillBar 
-                  key={skill.name} 
-                  name={skill.name} 
-                  level={skill.level} 
-                  delay={600 + (index * 100)}
-                />
-              ))}
-            </div>
-
-            <div className="fade-in opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '600ms' }}>
-              <h3 className="text-2xl font-semibold mb-6">Backend Skills</h3>
-              {skills.backend.map((skill, index) => (
-                <SkillBar 
-                  key={skill.name} 
-                  name={skill.name} 
-                  level={skill.level}
-                  delay={1000 + (index * 100)}
-                />
-              ))}
-            </div>
-          </div>
+        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-6 py-2 rounded-full transition-all ${activeCategory === category.id
+                ? 'bg-gradient-to-r from-blue-400 to-purple-500 text-white'
+                : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
+            >
+              {category.label}
+            </button>
+          ))}
         </div>
-      </div>
 
-      <style jsx>{`
-        .bg-grid-pattern {
-          background-image: radial-gradient(circle, #6366f1 1px, transparent 1px);
-          background-size: 24px 24px;
-        }
-
-        .fade-in.show {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .skill-progress.show {
-          width: var(--width);
-        }
-
-        .show .skill-progress {
-          width: var(--data-width);
-        }
-      `}</style>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredSkills.map((skill) => (
+            <SkillCard key={skill.name} skill={skill} />
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };

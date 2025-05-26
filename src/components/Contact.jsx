@@ -22,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-purple-200 via-purple-500 to-pink-700 text-white relative overflow-hidden">
+    <section id="contact" className="py-20 bg-gray-800 text-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -right-1/4 w-96 h-96 bg-purple-500 rounded-full opacity-20 blur-3xl"></div>
@@ -37,7 +37,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6 bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="group">
@@ -102,7 +102,7 @@ const Contact = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <h3 className="text-lg font-semibold mb-2">Email</h3>
-              <p className="text-purple-200">contact@himanisharma.dev</p>
+              <p className="text-purple-200 px-4">hinusharma18@gmail.com</p>
             </div>
             <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg">
               <svg className="w-8 h-8 mx-auto mb-4 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -110,7 +110,7 @@ const Contact = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
               <h3 className="text-lg font-semibold mb-2">Location</h3>
-              <p className="text-purple-200">Mumbai, India</p>
+              <p className="text-purple-200">Greater Noida, India</p>
             </div>
             <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg">
               <svg className="w-8 h-8 mx-auto mb-4 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -118,10 +118,10 @@ const Contact = () => {
               </svg>
               <h3 className="text-lg font-semibold mb-2">Social</h3>
               <div className="flex justify-center space-x-4">
-                <a href="#" className="text-purple-200 hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/in/himani1805" target='_blank' className="text-purple-200 hover:text-white transition-colors">
                   LinkedIn
                 </a>
-                <a href="#" className="text-purple-200 hover:text-white transition-colors">
+                <a href="https://github.com/Himani1805" target='_blank' className="text-purple-200 hover:text-white transition-colors">
                   GitHub
                 </a>
               </div>
