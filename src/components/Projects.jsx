@@ -1,197 +1,276 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight, Grid, Layers } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
   const projects = [
     {
-      title: 'AIIMS Clone',
-      description: 'A clone of the All India Institute of Medical Sciences (AIIMS) website, showcasing healthcare services and information.',
-      tech: ['HTML', 'CSS'],
-      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_172957_o97hsh.png',
-      githubLink: 'https://github.com/Himani1805/AIIMS-clone',
-      demoLink: 'https://aiimsup.netlify.app',
-      category: 'Frontend'
+      title: "Prime Health",
+      description: "Hospital Management System offering multi-tenant architecture, patient management, secure role-based access, and interactive dashboards.",
+      tags: ["React", "Express.js", "MongoDB", "Redux Toolkit", "Tailwind"],
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://prime-health-one.vercel.app",
+      codeLink: "https://github.com/Himani1805/Prime-Health"
     },
     {
-      title: 'UPIC Clone',
-      description: 'A responsive website for the Uttar Pradesh Information Commission, providing information and resources related to RTI.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_172342_vjtwir.png',
-      githubLink: 'https://github.com/Himani1805/upic.gov.in',
-      demoLink: 'https://upicgov.netlify.app',
-      category: 'Frontend'
+      title: "PowerX CRM",
+      description: "Full-stack PERN CRM handling 10,000+ records. Features real-time Socket.io notifications, RBAC security, and high-performance lead tracking.",
+      tags: ["React", "PostgreSQL", "Prisma", "Redux Toolkit", "Socket.io"],
+      image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://power-x-pink.vercel.app",
+      codeLink: "https://github.com/Himani1805/PowerX"
     },
     {
-      title: 'Bluefly.com clone',
-      description: 'A clone of the Bluefly e-commerce website, featuring product listings, and a shopping cart.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_173902_tq8dmu.png',
-      githubLink: 'https://github.com/Himani1805/Bluefly.com',
-      demoLink: 'https://blueflycomnetlify.netlify.app',
-      category: 'Frontend'
+      title: "Wayfair E-commerce",
+      description: "Full-stack e-commerce dashboard featuring comprehensive product management, secure user authentication, and persistent shopping cart functionality.",
+      tags: ["React", "Node.js", "MongoDB", "Chakra UI"],
+      image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657660/Screenshot_2025-05-19_174219_i5mcam.png",
+      demoLink: "https://wayfair-com.vercel.app",
+      codeLink: "https://github.com/Himani1805/Wayfair.com"
     },
     {
-      title: 'Etsy Fashion Store',
-      description: 'A responsive e-commerce website for a fashion store, featuring product listings and a shopping cart.',
-      tech: ['Git', 'React', 'CSS', 'JavaScript', 'React Router'],
-      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_171207_jl5y1f.png',
-      githubLink: 'https://github.com/Himani1805/Etsy.com',
-      demoLink: 'https://etsycom.netlify.app/',
-      category: 'Frontend'
+      title: "Nordstrom Rack",
+      description: "Pixel-perfect clone of the fashion retailer website. Features varied product listings, filtering systems, and a responsive shopping cart experience.",
+      tags: ["React", "Chakra UI", "React Router"],
+      image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_171121_pjjmhv.png",
+      demoLink: "https://nordstromrack-himani.netlify.app",
+      codeLink: "https://github.com/Himani1805/nordstromrack.com"
     },
     {
-      title: 'Nordstrom Rack',
-      description: 'A responsive e-commerce website for a fashion store, featuring product listings and a shopping cart.',
-      tech: ['React', 'CSS', 'JavaScript', 'Chakra UI', 'React Router'],
-      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_171121_pjjmhv.png',
-      githubLink: 'https://github.com/Himani1805/nordstromrack.com',
-      demoLink: 'https://nordstromrack-himani.netlify.app',
-      category: 'Frontend'
+      title: "Etsy Fashion Store",
+      description: "A responsive marketplace simulation focusing on product discovery and smooth navigation flow, built with vanilla CSS for custom styling.",
+      tags: ["React", "CSS", "React Router"],
+      image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_171207_jl5y1f.png",
+      demoLink: "https://etsycom.netlify.app/",
+      codeLink: "https://github.com/Himani1805/Etsy.com"
     },
     {
-      title: 'Wayfair E-commerce',
-      description: 'A fuull-stack e-commerce dashboard for wayfair website, featuring product listings, user authentication, and a shopping cart.',
-      tech: ['React', 'Chakra UI', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB'],
-      image: 'https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657660/Screenshot_2025-05-19_174219_i5mcam.png',
-      githubLink: 'https://github.com/Himani1805/Wayfair.com',
-      demoLink: 'https://wayfair-com.vercel.app',
-      category: 'Full Stack'
+      title: "Bluefly.com Clone",
+      description: "Static e-commerce frontend demonstrating mastery of HTML/CSS layout techniques and JavaScript DOM manipulation.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_173902_tq8dmu.png",
+      demoLink: "https://blueflycomnetlify.netlify.app",
+      codeLink: "https://github.com/Himani1805/Bluefly.com"
+    },
+    {
+      title: "UPIC Clone",
+      description: "Official-looking informational portal for the Uttar Pradesh Information Commission. Focuses on information architecture and accessibility.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_172342_vjtwir.png",
+      demoLink: "https://upicgov.netlify.app",
+      codeLink: "https://github.com/Himani1805/upic.gov.in"
+    },
+    {
+      title: "AIIMS Clone",
+      description: "Healthcare portal design clone. Demonstrates ability to structure complex information and maintain professional design standards.",
+      tags: ["HTML", "CSS"],
+      image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_172957_o97hsh.png",
+      demoLink: "https://aiimsup.netlify.app",
+      codeLink: "https://github.com/Himani1805/AIIMS-clone"
     }
   ];
 
-  const [filter, setFilter] = useState('All');
-  const observerRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isViewAll, setIsViewAll] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  const categories = ['All', 'Full Stack', 'Frontend'];
-
-  const filteredProjects = filter === 'All'
-    ? projects
-    : projects.filter(project => project.category === filter);
-
+  // Handle responsive items per page
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('.project-card').forEach((card) => {
-      observerRef.current.observe(card);
-    });
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(3);
       }
     };
-  }, [filter]);
 
-  return (
-    // bg - gradient - to - b from - white to - purple - 50
-    <section id="projects" className="py-20 ">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">My Projects</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Here are some of my recent works that showcase my skills and experience
-          </p>
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setFilter(category)}
-                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300
-                  ${filter === category
-                    ? 'bg-gray-900 text-white shadow-lg'
-                    : 'bg-white text-gray-600 hover:bg-gray-900 hover:text-white shadow-md'}
-                `}
-              >
-                {category}
-              </button>
-            ))}
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % projects.length);
+  }, [projects.length]);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
+  useEffect(() => {
+    if (isViewAll || isPaused) return;
+    const interval = setInterval(nextSlide, 3000);
+    return () => clearInterval(interval);
+  }, [isViewAll, isPaused, nextSlide]);
+
+  const getVisibleProjects = () => {
+    const visible = [];
+    for (let i = 0; i < itemsPerPage; i++) {
+      visible.push(projects[(currentIndex + i) % projects.length]);
+    }
+    return visible;
+  };
+
+  const ProjectCard = ({ project }) => (
+    <div className="flex flex-col h-full bg-slate-800/30 backdrop-blur-xl rounded-2xl border border-slate-700/50 overflow-hidden hover:border-indigo-500/30 transition-all duration-300 group">
+      {/* Image Section */}
+      <div className="relative h-48 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-all duration-500 z-10" />
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+        />
+      </div>
+
+      {/* Content Section */}
+      <div className="flex flex-col p-6 flex-grow">
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors pr-2">
+            {project.title}
+          </h3>
+          <div className="flex gap-2 shrink-0">
+            <a
+              href={project.codeLink}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-lg bg-slate-700/50 text-white hover:bg-indigo-600 hover:text-white transition-all duration-300"
+              title="View Code"
+            >
+              <Github size={18} />
+            </a>
+            <a
+              href={project.demoLink}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-lg bg-slate-700/50 text-white hover:bg-emerald-500 hover:text-white transition-all duration-300"
+              title="Live Demo"
+            >
+              <ExternalLink size={18} />
+            </a>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className="project-card opacity-0 translate-y-8 transition-all duration-700 ease-out bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl"
-              style={{ transitionDelay: `${index * 200}ms` }}
-            >
-              <div className="block group">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 text-white rounded-full text-xs backdrop-blur-sm bg-gradient-to-r from-blue-400 to-purple-500">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
+        <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3">
+          {project.description}
+        </p>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-purple-600 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-between my-6 space-x-4">
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
-                    >
-                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
-                      </svg>
-                      GitHub
-                    </a>
-                    <a
-                      href={project.demoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      // className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-lg hover:bg-purple-700 transition-colors"
-                      className="flex items-center px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-lg hover:bg-purple-700 transition-colors"
-
-                    >
-                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                      Visit Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="mt-auto flex flex-wrap gap-2">
+          {project.tags.map((tag, i) => (
+            <span key={i} className="px-2 py-1 text-[10px] font-medium text-indigo-300 bg-indigo-500/10 rounded-full border border-indigo-500/20">
+              {tag}
+            </span>
           ))}
         </div>
       </div>
+    </div>
+  );
 
-      <style jsx>{`
-        .project-card.show {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      `}</style>
+  return (
+    <section id="projects" className="py-24 bg-[#0B1121] relative overflow-hidden">
+      {/* Subtle Background Glows */}
+      <div className="absolute top-[20%] left-[10%] w-[30rem] h-[30rem] bg-indigo-900/20 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-[20%] right-[10%] w-[30rem] h-[30rem] bg-emerald-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">
+              Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">Projects</span>
+            </h2>
+            <p className="text-slate-400 max-w-xl text-lg">
+              A showcase of my technical proficiency and design capabilities.
+            </p>
+          </div>
+
+          <button
+            onClick={() => setIsViewAll(!isViewAll)}
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-slate-800/50 border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all font-medium text-sm backdrop-blur-md group"
+          >
+            {isViewAll ? <><Layers size={18} className="group-hover:scale-110 transition-transform" /> Slider View</> : <><Grid size={18} className="group-hover:scale-110 transition-transform" /> View All Projects</>}
+          </button>
+        </div>
+
+        <div className="min-h-[500px] relative">
+          <AnimatePresence mode='wait'>
+            {!isViewAll ? (
+              /* SLIDER VIEW */
+              <motion.div
+                key="slider"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative w-full"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <AnimatePresence mode='popLayout'>
+                    {getVisibleProjects().map((project, index) => (
+                      <motion.div
+                        key={`${project.title}-${currentIndex + index}`}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -50 }}
+                        transition={{ duration: 0.5 }}
+                        layout
+                      >
+                        <ProjectCard project={project} />
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
+                </div>
+
+                {/* Slider Navigation */}
+                <div className="flex justify-center gap-4 mt-8">
+                  <button onClick={prevSlide} className="p-3 bg-slate-800/80 backdrop-blur-md border border-slate-700 text-white rounded-full hover:bg-indigo-600 hover:border-indigo-500 transition-all shadow-lg group">
+                    <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+                  </button>
+
+                  {/* Indicators */}
+                  <div className="flex items-center gap-2">
+                    {projects.map((_, idx) => (
+                      <div
+                        key={idx}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-6 bg-indigo-500' : 'w-1.5 bg-slate-700'}`}
+                      />
+                    ))}
+                  </div>
+
+                  <button onClick={nextSlide} className="p-3 bg-slate-800/80 backdrop-blur-md border border-slate-700 text-white rounded-full hover:bg-indigo-600 hover:border-indigo-500 transition-all shadow-lg group">
+                    <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </motion.div>
+            ) : (
+              /* GRID VIEW */
+              <motion.div
+                key="grid"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
+                {projects.map((project, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <ProjectCard project={project} />
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
     </section>
   );
 };
