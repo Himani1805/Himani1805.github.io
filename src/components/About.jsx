@@ -1,140 +1,70 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { User, Code, Globe } from 'lucide-react';
 
 const About = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-
-  const categories = [
-    { id: 'all', label: 'All' },
-    { id: 'frontend', label: 'Frontend' },
-    { id: 'backend', label: 'Backend' },
-    { id: 'database', label: 'Database' },
-    { id: 'other', label: 'Other' }
-  ];
-
-  const skills = {
-    frontend: [
-      { name: 'HTML', icon: '🌐', color: '#E34F26', stars: 5, category: 'frontend', description: 'Semantic markup and accessibility standards' },
-      { name: 'CSS', icon: '🎨', color: '#1572B6', stars: 5, category: 'frontend', description: 'Advanced styling, animations, and responsive design' },
-      { name: 'JavaScript', icon: '⚡', color: '#F7DF1E', stars: 5, category: 'frontend', description: 'Modern ES6+, DOM manipulation, and asynchronous patterns' },
-      { name: 'React', icon: '⚛️', color: '#61DAFB', stars: 5, category: 'frontend', description: 'Component architecture, hooks, context API, and state management' },
-      { name: 'Chakra UI', icon: '✨', color: '#319795', stars: 4, category: 'frontend', description: 'Building accessible UI components with Chakra UI library' }
-    ],
-    backend: [
-      { name: 'Node.js', icon: '🟢', color: '#339933', stars: 4, category: 'backend', description: 'Server-side JavaScript runtime for building scalable applications' },
-      { name: 'Express.js', icon: '🚂', color: '#000000', stars: 4, category: 'backend', description: 'RESTful API development with middleware architecture' },
-      { name: 'Python', icon: '🐍', color: '#3776AB', stars: 4, category: 'backend', description: 'Data processing, automation, and scripting' },
-      // { name: 'Django', icon: '🎯', color: '#092E20', stars: 4, category: 'backend', description: 'Full-stack Python framework for rapid development' }
-    ],
-    database: [
-      { name: 'MongoDB', icon: '🍃', color: '#47A248', stars: 4, category: 'database', description: 'Document-oriented NoSQL database with aggregation framework' },
-      { name: 'REST API', icon: '🔌', color: '#FF6B6B', stars: 4, category: 'database', description: 'Building and consuming RESTful web services' }
-    ],
-    other: [
-      { name: 'Git', icon: '📦', color: '#F05032', stars: 4, category: 'other', description: 'Version control and collaborative development workflows' },
-      // { name: 'QGIS', icon: '🗺️', color: '#589632', stars: 4, category: 'other', description: 'Geographic data analysis and visualization' },
-      // { name: 'ArcGIS', icon: '🌍', color: '#2C7AC3', stars: 4, category: 'other', description: 'Enterprise GIS solutions and spatial analysis' }
-    ]
-  };
-
-  const SkillCard = ({ skill }) => {
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="relative bg-navy-900 rounded-xl overflow-hidden"
-        style={{
-          backgroundColor: '#1a1f2b',
-          minHeight: '180px',
-          transform: isHovered ? 'translateY(-5px)' : 'none',
-          transition: 'transform 0.3s ease'
-        }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="p-6">
-          <div className="flex items-center mb-4">
-            <span className="text-3xl mr-3">{skill.icon}</span>
-            <h4 className="text-xl font-semibold text-white">{skill.name}</h4>
-          </div>
-          <div className="flex mb-3">
-            {[...Array(5)].map((_, index) => (
-              <span
-                key={index}
-                className={`text-lg ${index < skill.stars ? 'text-yellow-400' : 'text-gray-600'}`}
-              >
-                ★
-              </span>
-            ))}
-          </div>
-          <p className="text-gray-400 text-sm">{skill.description}</p>
-        </div>
-        <div
-          className="absolute bottom-0 left-0 right-0 h-1"
-          style={{ backgroundColor: skill.color }}
-        />
-      </motion.div>
+        <section id="about" className="py-20 bg-slate-950 relative">
+            <div className="container mx-auto px-6">
+                <div className="flex flex-col md:flex-row items-center gap-16">
+                    {/* Image/Profile Side */}
+                    <div className="md:w-1/2 flex justify-center">
+                        <div className="relative w-full max-w-md">
+                            <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-slate-800 border-2 border-slate-700 relative group">
+                                {/* Placeholder for actual image */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10"></div>
+                                <img
+                                    // src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    src="https://res.cloudinary.com/dgbymqjtk/image/upload/v1766000737/3096ff95-b305-463b-abdb-35a92dd7384a_ctozt9.jpg"
+                                    alt="Profile"
+                                    className="w-full h-full object-cover  transition-all duration-500"
+                                    // grayscale group-hover:grayscale-0
+                                />
+                            </div>
+
+                            {/* Floating Cards */}
+                            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-slate-800 p-4 rounded-lg border border-slate-700 shadow-xl hidden md:block z-20 w-max">
+                                <div className="flex items-center gap-3">
+                                    <div className="p-2 bg-violet-500/20 rounded-lg text-violet-400">
+                                        <Code size={24} />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-slate-400">Experience</p>
+                                        <p className="font-bold text-white"> Years</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Content Side */}
+                    <div className="md:w-1/2 space-y-6">
+                        <h2 className="text-3xl md:text-4xl font-bold font-display">
+                            <span className="text-violet-400">About</span> Me
+                        </h2>
+
+                        <p className="text-slate-400 leading-relaxed text-lg">
+                            Hello! I'm Himani Sharma, a passionate Full Stack Developer with experience in building robust web applications. I enjoy creating intuitive and dynamic user experiences, solving complex problems with clean and efficient code.
+                        </p>
+
+                        <p className="text-slate-400 leading-relaxed text-lg">
+                            I specialize in the MERN stack (MongoDB, Express, React, Node.js) and have a strong foundation in frontend technologies like HTML, CSS, and Chakra UI. I'm always eager to learn new technologies and contribute to meaningful projects.
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-4 pt-4">
+                            <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 hover:border-violet-500/50 transition-colors">
+                                <h4 className="font-bold text-white mb-1">Frontend</h4>
+                                <p className="text-sm text-slate-500">React, Tailwind, Next.js</p>
+                            </div>
+                            <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 hover:border-violet-500/50 transition-colors">
+                                <h4 className="font-bold text-white mb-1">Backend</h4>
+                                <p className="text-sm text-slate-500">Node.js, Express, MongoDB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     );
-  };
-
-  const filteredSkills = activeCategory === 'all'
-    ? Object.values(skills).flat()
-    : skills[activeCategory] || [];
-
-  return (
-    // <section className="min-h-screen py-20 bg-gradient-to-br from-gray-900 to-black text-white">
-
-    <section className="min-h-screen py-20 bg-gradient-to-br from-white-900 to-white text-white">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="container mx-auto px-4"
-      >
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-          >
-            Skills & Tech Stack
-          </motion.h2>
-          <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-gray-400 max-w-2xl mx-auto"
-          >
-            Technologies I've worked with to build modern web applications
-          </motion.p>
-        </div>
-
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-2 rounded-full transition-all ${activeCategory === category.id
-                ? 'bg-gradient-to-r from-blue-400 to-purple-500 text-white'
-                : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill) => (
-            <SkillCard key={skill.name} skill={skill} />
-          ))}
-        </div>
-      </motion.div>
-    </section>
-  );
 };
 
 export default About;
