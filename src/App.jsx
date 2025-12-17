@@ -4,8 +4,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 function App() {
-  const resumeUrl = "https://resume-builder-test-new.masaischool.com/resume/public?resumeId=6838ba88bc300dfb49ce3f88"
-  // "https://resume-api-new.masaischool.com/profile/download/resume?resumeId=682b333ed980da4fe4fbb06e&templateName=Matty&fontSize=medium"
+  const resumeUrl = "https://drive.google.com/file/d/19pwPiWUgVLv5GtIoUD0L84_uS3NZ3O-I/view?usp=sharing"
   return (
     <div className="min-h-screen">
       <nav className="fixed w-full bg-white bg-opacity-90 shadow-md z-50">
