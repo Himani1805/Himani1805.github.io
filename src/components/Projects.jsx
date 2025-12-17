@@ -21,12 +21,44 @@ const Projects = () => {
       codeLink: "https://github.com/Himani1805/PowerX"
     },
     {
+      title: "Library Management",
+      description: "Built a complete library management system featuring user logins, book cataloging, borrow/return tracking, and an admin dashboard for member oversight.",
+      tags: ["React", "Tailwind CSS", "Express.js", "MongoDB", "REST APIs"],
+      image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://library-management-eosin-two.vercel.app/",
+      codeLink: "https://github.com/Himani1805/library_management"
+    },
+    {
+      title: "Health Connect",
+      description: "Developed a patient-doctor appointment booking platform with focus on user experience. Features 20+ reusable UI components and efficient state management using Context API.",
+      tags: ["React", "JavaScript", "Tailwind CSS", "Context API"],
+      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://health-connect-xi.vercel.app/",
+      codeLink: "https://github.com/Himani1805/health_connect"
+    },
+    {
+      title: "Weather App",
+      description: "Real-time weather dashboard featuring 5-day forecasts, instant city search, and responsive design. Integrated with live APIs to display temperature, humidity, and wind conditions.",
+      tags: ["React", "OpenWeather API", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://weather-app-xi-sandy.vercel.app/",
+      codeLink: "https://github.com/Himani1805/weather_app"
+    },
+    {
       title: "Wayfair E-commerce",
       description: "Full-stack e-commerce dashboard featuring comprehensive product management, secure user authentication, and persistent shopping cart functionality.",
       tags: ["React", "Node.js", "MongoDB", "Chakra UI"],
       image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657660/Screenshot_2025-05-19_174219_i5mcam.png",
       demoLink: "https://wayfair-com.vercel.app",
       codeLink: "https://github.com/Himani1805/Wayfair.com"
+    },
+    {
+      title: "Croma Ecommerce",
+      description: "A modern, responsive e-commerce web application built with React, Redux, and Tailwind CSS. This project is a clone of the Croma website, featuring a comprehensive shopping experience with product browsing, filtering, and cart management.",
+      tags: ["React 19", "Redux Toolkit", "Tailwind CSS", "React Router v7"],
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://croma-ecommerce.vercel.app/products",
+      codeLink: "https://github.com/Himani1805/croma-ecommerce"
     },
     {
       title: "Nordstrom Rack",

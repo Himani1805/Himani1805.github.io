@@ -12,24 +12,65 @@ import { ArrowUp } from 'lucide-react';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [visibleSection, setVisibleSection] = useState('home');
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
       setActiveSection(hash || 'home');
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      setVisibleSection(hash || 'home');
+      if (hash && hash !== 'home') {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
     };
 
     // Set initial state based on current hash
-    handleHashChange();
+    // handleHashChange(); // Let the router or browser handle initial scroll if hash exists? 
+    // Actually we need to set initial activeSection.
+    const initialHash = window.location.hash.replace('#', '');
+    setActiveSection(initialHash || 'home');
+    setVisibleSection(initialHash || 'home');
+
 
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  // Scroll Spy Effect for Home Section
+  useEffect(() => {
+    if (activeSection !== 'home') return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px', // Trigger when section is near top
+      threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          if (id) {
+            // Use replaceState to update URL without triggering hashchange
+            // preventing the app from switching out of 'home' mode
+            const sectionName = id === 'hero' ? 'home' : id;
+            window.history.replaceState(null, null, `#${sectionName}`);
+            setVisibleSection(sectionName);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [activeSection]);
+
   return (
     <div className="bg-slate-950 min-h-screen text-slate-200 selection:bg-violet-500 selection:text-white">
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      <Navbar activeSection={activeSection} visibleSection={visibleSection} setActiveSection={setActiveSection} />
 
       <main className="pt-20">
         {activeSection === 'home' && (

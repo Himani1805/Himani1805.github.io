@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 
-const Navbar = ({ activeSection }) => {
+const Navbar = ({ activeSection, visibleSection }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -22,6 +22,8 @@ const Navbar = ({ activeSection }) => {
         { name: 'Contact', href: '#contact' },
     ];
 
+    const currentSection = activeSection === 'home' ? visibleSection : activeSection;
+
     return (
         <nav
             className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/80 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'
@@ -41,7 +43,7 @@ const Navbar = ({ activeSection }) => {
                     {navLinks.map((link) => {
                         // Extract id from href (e.g. #about -> about)
                         const sectionId = link.href.replace('#', '');
-                        const isActive = activeSection === sectionId || (activeSection === 'home' && sectionId === 'home');
+                        const isActive = currentSection === sectionId || (currentSection === 'home' && sectionId === 'home');
 
                         return (
                             <a
@@ -79,7 +81,7 @@ const Navbar = ({ activeSection }) => {
                     <div className="flex flex-col space-y-4">
                         {navLinks.map((link) => {
                             const sectionId = link.href.replace('#', '');
-                            const isActive = activeSection === sectionId || (activeSection === 'home' && sectionId === 'home');
+                            const isActive = currentSection === sectionId || (currentSection === 'home' && sectionId === 'home');
 
                             return (
                                 <a

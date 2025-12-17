@@ -55,12 +55,13 @@ const Hero = ({ setActiveSection }) => {
 
         {/* Visual Content (Illustration/Image) */}
         <div className="relative hidden md:block">
-          <div className="relative z-10 w-full max-w-md mx-auto aspect-square rounded-2xl bg-gradient-to-tr from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center overflow-hidden shadow-2xl skew-y-3 transform rotate-2 hover:rotate-0 hover:skew-y-0 transition-all duration-500">
+          {/* className="relative z-10 w-full max-w-md mx-auto aspect-square rounded-2xl bg-gradient-to-tr from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center overflow-hidden shadow-2xl skew-y-3 transform rotate-2 hover:rotate-0 hover:skew-y-0 transition-all duration-500" */}
+          <div className="relative z-10 w-full max-w-md mx-auto aspect-square rounded-2xl bg-gradient-to-tr from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-indigo-500/20 hover:scale-[1.02]">
             {/* Abstract Code Pattern */}
             <div className="absolute inset-0 opacity-20">
               <div className="w-full h-full bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px]"></div>
             </div>
-           
+
             <div className="text-center p-8">
               {/* w-48 h-48 w-32 h-32 */}
               <div className="w-44 h-44 mx-auto mb-8 relative group">
