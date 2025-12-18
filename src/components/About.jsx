@@ -17,7 +17,7 @@ const About = () => {
                                     src="https://res.cloudinary.com/dgbymqjtk/image/upload/v1766000737/3096ff95-b305-463b-abdb-35a92dd7384a_ctozt9.jpg"
                                     alt="Profile"
                                     className="w-full h-full object-cover  transition-all duration-500"
-                                    // grayscale group-hover:grayscale-0
+                                // grayscale group-hover:grayscale-0
                                 />
                             </div>
 
