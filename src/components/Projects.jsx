@@ -21,6 +21,78 @@ const Projects = () => {
       codeLink: "https://github.com/Himani1805/PowerX"
     },
     {
+      title: "Nomichi Trip Desk",
+      description: "Travel operations desk focused on lead handling, trip planning workflows, responsive tables, and a clean dashboard experience.",
+      tags: ["React", "Tailwind CSS", "Dashboard", "Responsive UI"],
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://nomichi-trip-desk-xi.vercel.app",
+      codeLink: "https://github.com/Himani1805/nomichi-trip-desk"
+    },
+    {
+      title: "WaiverPro Compliance Agent",
+      description: "Compliance-focused web application with structured document flows, review states, and a deployment-ready responsive interface.",
+      tags: ["React", "Tailwind CSS", "Compliance", "Documents"],
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://waiverpro-compliance-agent.vercel.app",
+      codeLink: "https://github.com/Himani1805/waiverpro-compliance-agent"
+    },
+    {
+      title: "Avidus Task Manager",
+      description: "Role-based task management application for organizing team work, tracking updates, and keeping workflows easy to scan.",
+      tags: ["React", "Task Manager", "Role-Based Access", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://avidus-task-manager-tau.vercel.app",
+      codeLink: "https://github.com/Himani1805/avidus-task-manager"
+    },
+    {
+      title: "Expense Tracker",
+      description: "Personal finance tracker for recording expenses, reviewing spending patterns, and managing budget data through a simple UI.",
+      tags: ["React", "Finance", "Charts", "Local Data"],
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://expense-tracker-zeta-flame-83.vercel.app",
+      codeLink: "https://github.com/Himani1805/expense-tracker"
+    },
+    {
+      title: "GitHub User Explorer",
+      description: "Search-focused GitHub profile explorer with repository details, profile summaries, and live API-backed user lookup.",
+      tags: ["React", "GitHub API", "Search", "REST API"],
+      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://github-user-explorer-eta.vercel.app",
+      codeLink: "https://github.com/Himani1805/github-user-explorer"
+    },
+    {
+      title: "Invoice Extraction AI",
+      description: "AI-assisted invoice extraction project for parsing uploaded documents and turning invoice details into usable structured data.",
+      tags: ["React", "AI", "Invoices", "Document Parsing"],
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://invoice-extraction-ai-eosin.vercel.app",
+      codeLink: "https://github.com/Himani1805/invoice_extraction_ai"
+    },
+    {
+      title: "MediaNV Candidate Management",
+      description: "Candidate management system for tracking applicant records, updating workflow stages, and coordinating hiring operations.",
+      tags: ["React", "Candidate Tracking", "Dashboard", "API"],
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://media-nv-candidate-management-system.vercel.app",
+      codeLink: "https://github.com/Himani1805/MediaNV-Candidate-Management-System"
+    },
+    {
+      title: "MediaNV Database Interface",
+      description: "Database management interface for MediaNV data workflows, connection updates, and structured administrative views.",
+      tags: ["React", "Database", "Admin UI", "Management"],
+      image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://media-nv-database-management-interface.vercel.app",
+      codeLink: "https://github.com/Himani1805/MediaNV-Database-Management-Interface"
+    },
+    {
+      title: "India Data Hub",
+      description: "Data hub project presenting India-focused datasets through an organized, responsive interface for exploration and reference.",
+      tags: ["React", "Data", "Dashboard", "Responsive UI"],
+      image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://india-data-hub-ten.vercel.app",
+      codeLink: "https://github.com/Himani1805/IndiaDataHub"
+    },
+    {
       title: "Library Management",
       description: "Built a complete library management system featuring user logins, book cataloging, borrow/return tracking, and an admin dashboard for member oversight.",
       tags: ["React", "Tailwind CSS", "Express.js", "MongoDB", "REST APIs"],
@@ -154,6 +226,9 @@ const Projects = () => {
         <img
           src={project.image}
           alt={project.title}
+          onError={(event) => {
+            event.currentTarget.src = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
+          }}
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
         />
       </div>

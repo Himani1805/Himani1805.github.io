@@ -33,7 +33,12 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-white">Email Me</h4>
-                                        <p className="text-slate-400 break-all">hinusharma18@gmail.com</p>
+                                        <a
+                                            href="mailto:hinusharma18@gmail.com"
+                                            className="text-slate-400 break-all hover:text-violet-300 transition-colors"
+                                        >
+                                            hinusharma18@gmail.com
+                                        </a>
                                     </div>
                                 </div>
 
@@ -43,7 +48,12 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-white">Phone</h4>
-                                        <p className="text-slate-400">+91 98765 43210</p>
+                                        <a
+                                            href="tel:+917982363038"
+                                            className="text-slate-400 hover:text-violet-300 transition-colors"
+                                        >
+                                            +91 79823 63038
+                                        </a>
                                     </div>
                                 </div>
 
@@ -53,7 +63,14 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-white">Location</h4>
-                                        <p className="text-slate-400">Greater Noida, India</p>
+                                        <a
+                                            href="https://www.google.com/maps/search/?api=1&query=Greater%20Noida%2C%20India"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="text-slate-400 hover:text-violet-300 transition-colors"
+                                        >
+                                            Greater Noida, India
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -72,58 +89,6 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Contact Form */}
-                    {/* <form className="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl h-full flex flex-col justify-between">
-                        <div className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Your Name</label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
-                                        placeholder="John Doe"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-2">Your Email</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
-                                        placeholder="john@example.com"
-                                    />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label htmlFor="subject" className="block text-sm font-medium text-slate-400 mb-2">Subject</label>
-                                <input
-                                    type="text"
-                                    id="subject"
-                                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
-                                    placeholder="Project Inquiry"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-2">Message</label>
-                                <textarea
-                                    id="message"
-                                    rows="4"
-                                    className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all resize-none"
-                                    placeholder="Tell me about your project..."
-                                ></textarea>
-                            </div>
-
-                            <button
-                                type="button"
-                                className="w-full py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold rounded-xl shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
-                            >
-                                Send Message <Send size={18} />
-                            </button>
-                        </div>
-                    </form> */}
                     <ContactForm />
                 </div>
             </div>
