@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = ({ setActiveSection }) => {
@@ -9,22 +8,18 @@ const Hero = ({ setActiveSection }) => {
 
   return (
     <section id="hero" className="min-h-[calc(100vh-5rem)] flex items-center justify-center relative overflow-hidden pt-10 pb-14 sm:pt-12 md:pt-16 md:pb-12">
-      {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div className="absolute inset-0 bg-[#0B1121]"></div>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(800px,120vw)] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 right-0 w-[min(600px,110vw)] h-[600px] bg-emerald-600/5 rounded-full blur-[120px] pointer-events-none"></div>
-        {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
       </div>
 
       <div className="container mx-auto px-5 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
-        {/* Text Content */}
         <div className="text-center md:text-left space-y-6">
           <div className="inline-block max-w-full px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-violet-400 text-xs sm:text-sm font-medium mb-4">
             Available for freelance & full-time roles
           </div>
-          {/* 23 line code  text-5xl md:text-7xl font-bold font-display leading-tight           */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold font-display leading-tight">
             Building Digital <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">
@@ -58,17 +53,13 @@ const Hero = ({ setActiveSection }) => {
           </div>
         </div>
 
-        {/* Visual Content (Illustration/Image) */}
         <div className="relative hidden md:block">
-          {/* className="relative z-10 w-full max-w-md mx-auto aspect-square rounded-2xl bg-gradient-to-tr from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center overflow-hidden shadow-2xl skew-y-3 transform rotate-2 hover:rotate-0 hover:skew-y-0 transition-all duration-500" */}
           <div className="relative z-10 w-full max-w-md mx-auto aspect-square rounded-2xl bg-gradient-to-tr from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-indigo-500/20 hover:scale-[1.02]">
-            {/* Abstract Code Pattern */}
             <div className="absolute inset-0 opacity-20">
               <div className="w-full h-full bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px]"></div>
             </div>
 
             <div className="text-center p-8">
-              {/* w-48 h-48 w-32 h-32 */}
               <div className="w-44 h-44 mx-auto mb-8 relative group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-violet-600 to-emerald-600 rounded-full blur-[2px] opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative w-full h-full rounded-full p-[3px] bg-gradient-to-tr from-violet-500 to-emerald-500">
@@ -92,7 +83,6 @@ const Hero = ({ setActiveSection }) => {
             </div>
           </div>
 
-          {/* Decorative Elements */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-fuchsia-500/10 rounded-full blur-2xl"></div>
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-violet-500/10 rounded-full blur-2xl"></div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -23,9 +23,6 @@ function App() {
       }
     };
 
-    // Set initial state based on current hash
-    // handleHashChange(); // Let the router or browser handle initial scroll if hash exists? 
-    // Actually we need to set initial activeSection.
     const initialHash = window.location.hash.replace('#', '');
     setActiveSection(initialHash || 'home');
     setVisibleSection(initialHash || 'home');
@@ -35,13 +32,13 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  // Scroll Spy Effect for Home Section
   useEffect(() => {
     if (activeSection !== 'home') return;
 
     const observerOptions = {
       root: null,
-      rootMargin: '-20% 0px -60% 0px', // Trigger when section is near top
+      // Keep the nav highlight close to what the visitor is reading.
+      rootMargin: '-20% 0px -60% 0px',
       threshold: 0
     };
 
@@ -50,8 +47,6 @@ function App() {
         if (entry.isIntersecting) {
           const id = entry.target.id;
           if (id) {
-            // Use replaceState to update URL without triggering hashchange
-            // preventing the app from switching out of 'home' mode
             const sectionName = id === 'hero' ? 'home' : id;
             window.history.replaceState(null, null, `#${sectionName}`);
             setVisibleSection(sectionName);

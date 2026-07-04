@@ -1,4 +1,3 @@
-import React from 'react';
 import { Code } from 'lucide-react';
 
 const About = () => {
@@ -6,22 +5,17 @@ const About = () => {
         <section id="about" className="py-20 bg-slate-950 relative">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center gap-16">
-                    {/* Image/Profile Side */}
                     <div className="md:w-1/2 flex justify-center">
                         <div className="relative w-full max-w-md">
                             <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-slate-800 border-2 border-slate-700 relative group">
-                                {/* Placeholder for actual image */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10"></div>
                                 <img
-                                    // src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                                     src="https://res.cloudinary.com/dgbymqjtk/image/upload/v1766000737/3096ff95-b305-463b-abdb-35a92dd7384a_ctozt9.jpg"
                                     alt="Profile"
                                     className="w-full h-full object-cover  transition-all duration-500"
-                                // grayscale group-hover:grayscale-0
                                 />
                             </div>
 
-                            {/* Floating Cards */}
                             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-slate-800 p-4 rounded-lg border border-slate-700 shadow-xl hidden md:block z-20 w-max">
                                 <div className="flex items-center gap-3">
                                     <div className="p-2 bg-violet-500/20 rounded-lg text-violet-400">
@@ -36,7 +30,6 @@ const About = () => {
                         </div>
                     </div>
 
-                    {/* Content Side */}
                     <div className="md:w-1/2 space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold font-display">
                             <span className="text-violet-400">About</span> Me

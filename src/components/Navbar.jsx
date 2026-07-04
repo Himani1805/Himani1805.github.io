@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = ({ activeSection, visibleSection }) => {
@@ -38,16 +38,25 @@ const Navbar = ({ activeSection, visibleSection }) => {
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <a
                     href="#home"
-                    className="shrink-0 text-2xl font-bold bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent font-display focus:outline-none"
+                    className="group flex min-w-0 shrink-0 items-center gap-3 focus:outline-none"
+                    aria-label="Himani Sharma home"
                     onClick={() => setIsOpen(false)}
                 >
-                    HS.
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-indigo-400/40 bg-slate-900/80 text-base font-bold text-white shadow-lg shadow-indigo-950/30 transition-all duration-300 group-hover:border-emerald-400/60 group-hover:shadow-emerald-950/30">
+                        HS
+                    </span>
+                    <span className="min-w-0 leading-tight">
+                        <span className="block truncate font-display text-base font-bold text-white sm:text-lg">
+                            Himani Sharma
+                        </span>
+                        <span className="hidden text-xs font-medium tracking-wide text-slate-400 sm:block">
+                            Developer Portfolio
+                        </span>
+                    </span>
                 </a>
 
-                {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-8">
                     {navLinks.map((link) => {
-                        // Extract id from href (e.g. #about -> about)
                         const sectionId = link.href.replace('#', '');
                         const isActive = currentSection === sectionId || (currentSection === 'home' && sectionId === 'home');
 
@@ -72,7 +81,6 @@ const Navbar = ({ activeSection, visibleSection }) => {
                     </a>
                 </div>
 
-                {/* Mobile Toggle */}
                 <button
                     className="md:hidden text-gray-300 hover:text-white focus:outline-none p-2 -mr-2"
                     onClick={() => setIsOpen(!isOpen)}
@@ -83,7 +91,6 @@ const Navbar = ({ activeSection, visibleSection }) => {
                 </button>
             </div>
 
-            {/* Mobile Menu */}
             {isOpen && (
                 <div className="md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-xl border-t border-slate-800 p-4 shadow-xl">
                     <div className="flex flex-col space-y-4">

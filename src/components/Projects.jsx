@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ExternalLink, Github, ChevronLeft, ChevronRight, Grid, Layers } from 'lucide-react';
 import { motion as Motion, AnimatePresence } from 'framer-motion';
 
@@ -179,7 +179,6 @@ const Projects = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  // Handle responsive items per page
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -191,7 +190,7 @@ const Projects = () => {
       }
     };
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -220,7 +219,6 @@ const Projects = () => {
 
   const ProjectCard = ({ project }) => (
     <div className="flex flex-col h-full bg-slate-800/30 backdrop-blur-xl rounded-2xl border border-slate-700/50 overflow-hidden hover:border-indigo-500/30 transition-all duration-300 group">
-      {/* Image Section */}
       <div className="relative h-48 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-all duration-500 z-10" />
         <img
@@ -233,7 +231,6 @@ const Projects = () => {
         />
       </div>
 
-      {/* Content Section */}
       <div className="flex flex-col p-6 flex-grow">
         <div className="flex justify-between items-start gap-3 mb-4">
           <h3 className="min-w-0 text-xl font-bold text-white group-hover:text-indigo-400 transition-colors break-words">
@@ -278,7 +275,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 bg-[#0B1121] relative overflow-hidden">
-      {/* Subtle Background Glows */}
       <div className="absolute top-[20%] left-[10%] w-[30rem] h-[30rem] bg-indigo-900/20 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-[20%] right-[10%] w-[30rem] h-[30rem] bg-emerald-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -304,7 +300,6 @@ const Projects = () => {
         <div className="min-h-[500px] relative">
           <AnimatePresence mode='wait'>
             {!isViewAll ? (
-              /* SLIDER VIEW */
               <Motion.div
                 key="slider"
                 initial={{ opacity: 0 }}
@@ -332,13 +327,12 @@ const Projects = () => {
                   </AnimatePresence>
                 </div>
 
-                {/* Slider Navigation */}
+                {/* These dots wrap on mobile because the project list is long. */}
                 <div className="flex justify-center gap-3 sm:gap-4 mt-8">
                   <button onClick={prevSlide} className="p-3 bg-slate-800/80 backdrop-blur-md border border-slate-700 text-white rounded-full hover:bg-indigo-600 hover:border-indigo-500 transition-all shadow-lg group">
                     <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
                   </button>
 
-                  {/* Indicators */}
                   <div className="flex flex-wrap items-center justify-center gap-2 max-w-36 sm:max-w-xs">
                     {projects.map((_, idx) => (
                       <div
@@ -354,7 +348,6 @@ const Projects = () => {
                 </div>
               </Motion.div>
             ) : (
-              /* GRID VIEW */
               <Motion.div
                 key="grid"
                 initial={{ opacity: 0 }}

@@ -8,8 +8,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #020617; /* slate-950 */
-  color: #e2e8f0; /* slate-200 */
+  background-color: #020617;
+  color: #e2e8f0;
   overflow-x: hidden;
 }
 
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Custom Scrollbar */
+/* Small polish for browsers that show custom scrollbars. */
 ::-webkit-scrollbar {
   width: 10px;
 }

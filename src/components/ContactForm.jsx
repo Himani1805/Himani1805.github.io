@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Send } from "lucide-react";
 
@@ -28,6 +28,7 @@ const ContactForm = () => {
         setFallbackHref("");
 
         try {
+            // Do not leave the visitor stuck if EmailJS takes too long.
             await Promise.race([
                 emailjs.sendForm(serviceId, templateId, form, { publicKey }),
                 new Promise((_, reject) => {
@@ -37,7 +38,7 @@ const ContactForm = () => {
             form.reset();
             setStatus("success");
             setMessage("Message sent successfully. I will get back to you soon.");
-        } catch (error) {
+        } catch {
             const formData = new FormData(form);
             const name = formData.get("name") || "";
             const email = formData.get("email") || "";
@@ -49,9 +50,9 @@ const ContactForm = () => {
                 formData.get("message") || "",
             ].join("\n");
 
-            console.error(`EmailJS error: ${error?.status || "unknown"} ${error?.text || "No provider message"}`);
             setStatus("error");
             setMessage("Message could not be sent from the form. You can email me directly instead.");
+            // Keep the message typed by the visitor and open it in their email app.
             setFallbackHref(`mailto:hinusharma18@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
         }
     };

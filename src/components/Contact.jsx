@@ -1,11 +1,9 @@
-import React from 'react';
 import { Mail, MapPin, Phone, Github, Linkedin } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const Contact = () => {
     return (
         <section id="contact" className="py-20 bg-slate-950 relative overflow-hidden">
-            {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[20%] right-0 w-96 h-96 bg-violet-900/10 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-fuchsia-900/10 rounded-full blur-3xl"></div>
@@ -22,7 +20,6 @@ const Contact = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch">
-                    {/* Contact Info */}
                     <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800 hover:border-violet-500/30 transition-all duration-300 h-full flex flex-col justify-between">
                         <div>
                             <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>

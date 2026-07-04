@@ -1,4 +1,3 @@
-import React from 'react';
 import { Award, FileCheck } from 'lucide-react';
 
 const Achievements = () => {
@@ -10,7 +9,6 @@ const Achievements = () => {
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    {/* Certifications Card */}
                     <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800 hover:border-violet-500/30 transition-all duration-300">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="p-3 bg-slate-800 rounded-lg text-violet-400">
@@ -32,7 +30,6 @@ const Achievements = () => {
                         </ul>
                     </div>
 
-                    {/* Achievements Card */}
                     <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800 hover:border-violet-500/30 transition-all duration-300">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="p-3 bg-slate-800 rounded-lg text-fuchsia-400">
