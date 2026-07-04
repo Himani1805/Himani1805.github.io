@@ -44,6 +44,7 @@ Some of the projects included in this portfolio:
 - Nomichi Trip Desk
 - WaiverPro Compliance Agent
 - Avidus Task Manager
+- Spur Chatbot
 - Expense Tracker
 - GitHub User Explorer
 - Invoice Extraction AI
@@ -54,6 +55,62 @@ Some of the projects included in this portfolio:
 - Health Connect
 - Weather App
 - E-commerce and clone projects
+
+## Project Skills & Highlights
+
+### Nomichi Trip Desk
+
+Trip enquiry and operations tool for Nomichi. Travellers can browse live open trips, view destination, dates, and GST-inclusive pricing, then submit an enquiry with validation and a clear success state. The admin side includes secure login, lead management, search, filtering, lead ownership, pipeline tracking, notes, touchpoints, dashboard overview, and trip create/edit/open/close controls.
+
+Skills used: Next.js App Router, JavaScript, Supabase, PostgreSQL, Gemini API, Vercel, authentication, admin dashboards, public enquiry flows, AI-assisted WhatsApp draft generation.
+
+### WaiverPro Compliance Agent
+
+AI compliance audit tool that checks the live WaiverPro app against PDF guidelines. The backend reads guideline rules from PDF files, logs in to the live app, scrapes rendered UI text, captures screenshots, sends evidence to Gemini or OpenAI for comparison, and stores reports plus coverage records.
+
+Skills used: React, Vite, Node.js, PDF parsing, Puppeteer scraping, Gemini/OpenAI comparison, MongoDB, Mongoose, report generation, screenshot evidence, compliance workflows.
+
+### Avidus Task Manager
+
+Full-stack RBAC task management app with Admin and User roles. Users can create, update, complete, and delete their own tasks. Admins can manage users, change account status, view all tasks, delete records, inspect activity logs, and review dashboard charts.
+
+Skills used: React, React Router DOM, Axios, Tailwind CSS v4, Recharts, Node.js, Express.js, MongoDB, Mongoose, JWT, Bcryptjs, RBAC, activity tracking.
+
+### Spur Chatbot
+
+AI chatbot application with a React client and TypeScript Express backend. The client supports routed pages, API calls, and markdown-rendered chat responses. The backend uses Prisma for the data layer and Google Generative AI for chatbot replies.
+
+Skills used: React 19, Vite, Tailwind CSS, Axios, React Router DOM, React Markdown, Express.js, TypeScript, Prisma, Google Generative AI, CORS, dotenv, Vercel.
+
+### Expense Tracker App
+
+Mobile-first personal finance app built to match a strict 375px mobile design. It supports transaction management, analytics, local data persistence, search, filtering, category grouping, and optimized state updates without heavy external state tools.
+
+Skills used: React, Vite, plain CSS, CSS variables, Context API, useReducer, useMemo, localStorage, Recharts, mobile-first UI, performance optimization.
+
+### Invoice Extraction AI
+
+AI-powered invoice extraction app for images and PDFs. It supports file upload, multimodal invoice parsing, structured JSON extraction, validation, Supabase storage, analytics dashboards, format detection, and duplicate invoice checks.
+
+Skills used: React, Tailwind CSS, FastAPI, Google Gemini, Supabase, PostgreSQL, file storage, Pydantic validation, analytics dashboards, duplicate detection.
+
+### MediaNV Candidate Management System
+
+Recruitment management system designed to replace spreadsheet-based hiring workflows with structured candidate records, cleaner data handling, and better process visibility.
+
+Skills used: React, candidate tracking, data management, dashboard UI, workflow organization, responsive admin interfaces.
+
+### MediaNV Database Management Interface
+
+Web-based database management interface for simplifying PostgreSQL database creation and migration tasks without requiring direct command-line access.
+
+Skills used: React, PostgreSQL, database administration UI, migration workflows, admin tooling, structured data operations.
+
+### India Data Hub
+
+Authenticated data dashboard with visualizations, filtering, and sorting for exploring India-focused data.
+
+Skills used: React.js, Tailwind CSS, Node.js, Express.js, MongoDB, JWT authentication, dashboard visualizations, Vercel frontend deployment, Render backend deployment.
 
 ## Tech Stack
 

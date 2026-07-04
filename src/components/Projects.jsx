@@ -6,7 +6,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Prime Health",
-      description: "Hospital Management System offering multi-tenant architecture, patient management, secure role-based access, and interactive dashboards.",
+      description: "Hospital management platform with patients, roles, dashboards, and secure multi-tenant workflows.",
       tags: ["React", "Express.js", "MongoDB", "Redux Toolkit", "Tailwind"],
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://prime-health-one.vercel.app",
@@ -14,47 +14,55 @@ const Projects = () => {
     },
     {
       title: "PowerX CRM",
-      description: "Full-stack PERN CRM handling 10,000+ records. Features real-time Socket.io notifications, RBAC security, and high-performance lead tracking.",
-      tags: ["React", "PostgreSQL", "Prisma", "Redux Toolkit", "Socket.io"],
+      description: "PERN CRM for large lead datasets with RBAC, real-time alerts, and fast tracking workflows.",
+      tags: ["React", "PostgreSQL", "Prisma", "Redux", "Socket.io"],
       image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://power-x-pink.vercel.app",
       codeLink: "https://github.com/Himani1805/PowerX"
     },
     {
       title: "Nomichi Trip Desk",
-      description: "Travel operations desk focused on lead handling, trip planning workflows, responsive tables, and a clean dashboard experience.",
-      tags: ["React", "Tailwind CSS", "Dashboard", "Responsive UI"],
+      description: "Trip enquiry and admin operations tool with leads, availability, and AI WhatsApp drafts.",
+      tags: ["Next.js", "Supabase", "PostgreSQL", "Gemini API", "Vercel"],
       image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://nomichi-trip-desk-xi.vercel.app",
       codeLink: "https://github.com/Himani1805/nomichi-trip-desk"
     },
     {
       title: "WaiverPro Compliance Agent",
-      description: "Compliance-focused web application with structured document flows, review states, and a deployment-ready responsive interface.",
-      tags: ["React", "Tailwind CSS", "Compliance", "Documents"],
+      description: "AI audit tool that compares WaiverPro screens with PDF rules and generates evidence reports.",
+      tags: ["React", "Vite", "Puppeteer", "AI", "MongoDB"],
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://waiverpro-compliance-agent.vercel.app",
       codeLink: "https://github.com/Himani1805/waiverpro-compliance-agent"
     },
     {
       title: "Avidus Task Manager",
-      description: "Role-based task management application for organizing team work, tracking updates, and keeping workflows easy to scan.",
-      tags: ["React", "Task Manager", "Role-Based Access", "Tailwind CSS"],
+      description: "RBAC task manager with user tasks, admin controls, activity logs, charts, and statistics.",
+      tags: ["React", "Express.js", "MongoDB", "JWT", "Recharts"],
       image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://avidus-task-manager-tau.vercel.app",
       codeLink: "https://github.com/Himani1805/avidus-task-manager"
     },
     {
+      title: "Spur Chatbot",
+      description: "AI chatbot app with markdown replies, chat APIs, Prisma data layer, and Gemini-powered responses.",
+      tags: ["React", "Express", "TypeScript", "Prisma", "Gemini"],
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      demoLink: "https://spur-chatbot-eight.vercel.app",
+      codeLink: "https://github.com/Himani1805/spur_chatbot"
+    },
+    {
       title: "Expense Tracker",
-      description: "Personal finance tracker for recording expenses, reviewing spending patterns, and managing budget data through a simple UI.",
-      tags: ["React", "Finance", "Charts", "Local Data"],
+      description: "Mobile-first finance app with transactions, filters, local storage, and analytics charts.",
+      tags: ["React", "Vite", "Plain CSS", "Context API", "Recharts"],
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://expense-tracker-zeta-flame-83.vercel.app",
       codeLink: "https://github.com/Himani1805/expense-tracker"
     },
     {
       title: "GitHub User Explorer",
-      description: "Search-focused GitHub profile explorer with repository details, profile summaries, and live API-backed user lookup.",
+      description: "GitHub profile explorer with live search, repository details, and API-backed user data.",
       tags: ["React", "GitHub API", "Search", "REST API"],
       image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://github-user-explorer-eta.vercel.app",
@@ -62,47 +70,47 @@ const Projects = () => {
     },
     {
       title: "Invoice Extraction AI",
-      description: "AI-assisted invoice extraction project for parsing uploaded documents and turning invoice details into usable structured data.",
-      tags: ["React", "AI", "Invoices", "Document Parsing"],
+      description: "AI invoice parser for images and PDFs with Gemini extraction, analytics, and Supabase storage.",
+      tags: ["React", "Tailwind", "FastAPI", "Gemini", "Supabase"],
       image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://invoice-extraction-ai-eosin.vercel.app",
       codeLink: "https://github.com/Himani1805/invoice_extraction_ai"
     },
     {
       title: "MediaNV Candidate Management",
-      description: "Candidate management system for tracking applicant records, updating workflow stages, and coordinating hiring operations.",
-      tags: ["React", "Candidate Tracking", "Dashboard", "API"],
+      description: "Recruitment dashboard for structured candidate records, tracking, and cleaner hiring workflows.",
+      tags: ["React", "Recruitment", "Dashboard", "Data"],
       image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://media-nv-candidate-management-system.vercel.app",
       codeLink: "https://github.com/Himani1805/MediaNV-Candidate-Management-System"
     },
     {
       title: "MediaNV Database Interface",
-      description: "Database management interface for MediaNV data workflows, connection updates, and structured administrative views.",
-      tags: ["React", "Database", "Admin UI", "Management"],
+      description: "PostgreSQL admin interface for database creation and migration without command-line work.",
+      tags: ["React", "PostgreSQL", "Database UI", "Admin Tools"],
       image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://media-nv-database-management-interface.vercel.app",
       codeLink: "https://github.com/Himani1805/MediaNV-Database-Management-Interface"
     },
     {
       title: "India Data Hub",
-      description: "Data hub project presenting India-focused datasets through an organized, responsive interface for exploration and reference.",
-      tags: ["React", "Data", "Dashboard", "Responsive UI"],
+      description: "Authenticated data dashboard with filters, sorting, and visualizations for India-focused datasets.",
+      tags: ["React", "Tailwind", "Node.js", "MongoDB", "JWT"],
       image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://india-data-hub-ten.vercel.app",
       codeLink: "https://github.com/Himani1805/IndiaDataHub"
     },
     {
       title: "Library Management",
-      description: "Built a complete library management system featuring user logins, book cataloging, borrow/return tracking, and an admin dashboard for member oversight.",
-      tags: ["React", "Tailwind CSS", "Express.js", "MongoDB", "REST APIs"],
+      description: "Library system with login, book catalog, borrow-return tracking, and admin oversight.",
+      tags: ["React", "Tailwind", "Express", "MongoDB", "REST"],
       image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://library-management-eosin-two.vercel.app/",
       codeLink: "https://github.com/Himani1805/library_management"
     },
     {
       title: "Health Connect",
-      description: "Developed a patient-doctor appointment booking platform with focus on user experience. Features 20+ reusable UI components and efficient state management using Context API.",
+      description: "Doctor appointment platform with reusable components, booking flows, and Context API state.",
       tags: ["React", "JavaScript", "Tailwind CSS", "Context API"],
       image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://health-connect-xi.vercel.app/",
@@ -110,15 +118,15 @@ const Projects = () => {
     },
     {
       title: "Weather App",
-      description: "Real-time weather dashboard featuring 5-day forecasts, instant city search, and responsive design. Integrated with live APIs to display temperature, humidity, and wind conditions.",
-      tags: ["React", "OpenWeather API", "Tailwind CSS"],
+      description: "Weather dashboard with city search, forecasts, live API data, and responsive layouts.",
+      tags: ["React", "Weather API", "Tailwind"],
       image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://weather-app-xi-sandy.vercel.app/",
       codeLink: "https://github.com/Himani1805/weather_app"
     },
     {
       title: "Wayfair E-commerce",
-      description: "Full-stack e-commerce dashboard featuring comprehensive product management, secure user authentication, and persistent shopping cart functionality.",
+      description: "E-commerce dashboard with product management, authentication, and persistent cart flows.",
       tags: ["React", "Node.js", "MongoDB", "Chakra UI"],
       image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657660/Screenshot_2025-05-19_174219_i5mcam.png",
       demoLink: "https://wayfair-com.vercel.app",
@@ -126,15 +134,15 @@ const Projects = () => {
     },
     {
       title: "Croma Ecommerce",
-      description: "A modern, responsive e-commerce web application built with React, Redux, and Tailwind CSS. This project is a clone of the Croma website, featuring a comprehensive shopping experience with product browsing, filtering, and cart management.",
-      tags: ["React 19", "Redux Toolkit", "Tailwind CSS", "React Router v7"],
+      description: "Responsive Croma clone with product browsing, filtering, Redux state, and cart management.",
+      tags: ["React", "Redux", "Tailwind", "Router"],
       image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       demoLink: "https://croma-ecommerce.vercel.app/products",
       codeLink: "https://github.com/Himani1805/croma-ecommerce"
     },
     {
       title: "Nordstrom Rack",
-      description: "Pixel-perfect clone of the fashion retailer website. Features varied product listings, filtering systems, and a responsive shopping cart experience.",
+      description: "Fashion retail clone with product listings, filters, and responsive cart experience.",
       tags: ["React", "Chakra UI", "React Router"],
       image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_171121_pjjmhv.png",
       demoLink: "https://nordstromrack-himani.netlify.app",
@@ -142,7 +150,7 @@ const Projects = () => {
     },
     {
       title: "Etsy Fashion Store",
-      description: "A responsive marketplace simulation focusing on product discovery and smooth navigation flow, built with vanilla CSS for custom styling.",
+      description: "Marketplace UI focused on product discovery, smooth navigation, and custom CSS styling.",
       tags: ["React", "CSS", "React Router"],
       image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_171207_jl5y1f.png",
       demoLink: "https://etsycom.netlify.app/",
@@ -150,7 +158,7 @@ const Projects = () => {
     },
     {
       title: "Bluefly.com Clone",
-      description: "Static e-commerce frontend demonstrating mastery of HTML/CSS layout techniques and JavaScript DOM manipulation.",
+      description: "Static e-commerce frontend with clean layout, responsive styling, and DOM interactions.",
       tags: ["HTML", "CSS", "JavaScript"],
       image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_173902_tq8dmu.png",
       demoLink: "https://blueflycomnetlify.netlify.app",
@@ -158,7 +166,7 @@ const Projects = () => {
     },
     {
       title: "UPIC Clone",
-      description: "Official-looking informational portal for the Uttar Pradesh Information Commission. Focuses on information architecture and accessibility.",
+      description: "Informational portal clone focused on accessible structure and clear content hierarchy.",
       tags: ["HTML", "CSS", "JavaScript"],
       image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_172342_vjtwir.png",
       demoLink: "https://upicgov.netlify.app",
@@ -166,7 +174,7 @@ const Projects = () => {
     },
     {
       title: "AIIMS Clone",
-      description: "Healthcare portal design clone. Demonstrates ability to structure complex information and maintain professional design standards.",
+      description: "Healthcare portal clone with structured information and professional page layouts.",
       tags: ["HTML", "CSS"],
       image: "https://res.cloudinary.com/dgbymqjtk/image/upload/v1747657659/Screenshot_2025-05-19_172957_o97hsh.png",
       demoLink: "https://aiimsup.netlify.app",
@@ -258,7 +266,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3">
+        <p className="min-h-10 text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
           {project.description}
         </p>
 
