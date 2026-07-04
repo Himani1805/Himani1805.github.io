@@ -4,7 +4,7 @@ A modern, responsive personal portfolio for showcasing my full-stack development
 
 ## Live URL
 
-[View Portfolio](https://himani1805.github.io/)
+[View Portfolio](https://himanisharma18.vercel.app/)
 
 ## About
 
@@ -138,9 +138,9 @@ If EmailJS is not configured or the email provider connection expires, the form 
 
 ## Deployment
 
-This portfolio is deployed with GitHub Pages:
+This portfolio is deployed on Vercel:
 
-[https://himani1805.github.io/](https://himani1805.github.io/)
+[https://himanisharma18.vercel.app/](https://himanisharma18.vercel.app/)
 
 To create a production build locally:
 
