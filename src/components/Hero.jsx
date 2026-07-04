@@ -65,7 +65,7 @@ const Hero = ({ setActiveSection }) => {
                 <div className="relative w-full h-full rounded-full p-[3px] bg-gradient-to-tr from-violet-500 to-emerald-500">
                   <div className="w-full h-full rounded-full overflow-hidden border-4 border-slate-900 bg-slate-800">
                     <img
-                      src="/images/himani-profile-classy.png"
+                      src="/himani-profile-classy.png"
                       alt="Himani Sharma"
                       className="w-full h-full object-cover object-[center_18%] transform group-hover:scale-110 transition-transform duration-500"
                     />
