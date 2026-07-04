@@ -17,6 +17,30 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', sans-serif;
 }
 
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 1180px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

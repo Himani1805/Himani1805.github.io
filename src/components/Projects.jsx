@@ -333,13 +333,13 @@ const Projects = () => {
                 </div>
 
                 {/* Slider Navigation */}
-                <div className="flex justify-center gap-4 mt-8">
+                <div className="flex justify-center gap-3 sm:gap-4 mt-8">
                   <button onClick={prevSlide} className="p-3 bg-slate-800/80 backdrop-blur-md border border-slate-700 text-white rounded-full hover:bg-indigo-600 hover:border-indigo-500 transition-all shadow-lg group">
                     <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
                   </button>
 
                   {/* Indicators */}
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center justify-center gap-2 max-w-36 sm:max-w-xs">
                     {projects.map((_, idx) => (
                       <div
                         key={idx}

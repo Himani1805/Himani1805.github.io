@@ -8,7 +8,7 @@ const Hero = ({ setActiveSection }) => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20">
+    <section id="hero" className="min-h-[calc(100vh-5rem)] flex items-center justify-center relative overflow-hidden pt-10 pb-14 sm:pt-12 md:pt-16 md:pb-12">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div className="absolute inset-0 bg-[#0B1121]"></div>
@@ -74,9 +74,9 @@ const Hero = ({ setActiveSection }) => {
                 <div className="relative w-full h-full rounded-full p-[3px] bg-gradient-to-tr from-violet-500 to-emerald-500">
                   <div className="w-full h-full rounded-full overflow-hidden border-4 border-slate-900 bg-slate-800">
                     <img
-                      src="https://res.cloudinary.com/dgbymqjtk/image/upload/v1766000737/3096ff95-b305-463b-abdb-35a92dd7384a_ctozt9.jpg"
+                      src="/images/himani-profile-classy.png"
                       alt="Himani Sharma"
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-[center_18%] transform group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                 </div>
