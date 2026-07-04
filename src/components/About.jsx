@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Code, Globe } from 'lucide-react';
+import { Code } from 'lucide-react';
 
 const About = () => {
     return (
@@ -50,7 +50,7 @@ const About = () => {
                             I specialize in the MERN stack (MongoDB, Express, React, Node.js) and have a strong foundation in frontend technologies like HTML, CSS, and Chakra UI. I'm always eager to learn new technologies and contribute to meaningful projects.
                         </p>
 
-                        <div className="grid grid-cols-2 gap-4 pt-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                             <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800 hover:border-violet-500/50 transition-colors">
                                 <h4 className="font-bold text-white mb-1">Frontend</h4>
                                 <p className="text-sm text-slate-500">React, Tailwind, Next.js</p>

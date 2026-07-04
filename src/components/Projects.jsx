@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ExternalLink, Github, ChevronLeft, ChevronRight, Grid, Layers } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
   const projects = [
@@ -160,8 +160,8 @@ const Projects = () => {
 
       {/* Content Section */}
       <div className="flex flex-col p-6 flex-grow">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors pr-2">
+        <div className="flex justify-between items-start gap-3 mb-4">
+          <h3 className="min-w-0 text-xl font-bold text-white group-hover:text-indigo-400 transition-colors break-words">
             {project.title}
           </h3>
           <div className="flex gap-2 shrink-0">
@@ -230,7 +230,7 @@ const Projects = () => {
           <AnimatePresence mode='wait'>
             {!isViewAll ? (
               /* SLIDER VIEW */
-              <motion.div
+              <Motion.div
                 key="slider"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -243,7 +243,7 @@ const Projects = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <AnimatePresence mode='popLayout'>
                     {getVisibleProjects().map((project, index) => (
-                      <motion.div
+                      <Motion.div
                         key={`${project.title}-${currentIndex + index}`}
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -252,7 +252,7 @@ const Projects = () => {
                         layout
                       >
                         <ProjectCard project={project} />
-                      </motion.div>
+                      </Motion.div>
                     ))}
                   </AnimatePresence>
                 </div>
@@ -277,10 +277,10 @@ const Projects = () => {
                     <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
-              </motion.div>
+              </Motion.div>
             ) : (
               /* GRID VIEW */
-              <motion.div
+              <Motion.div
                 key="grid"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -289,16 +289,16 @@ const Projects = () => {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
                 {projects.map((project, index) => (
-                  <motion.div
+                  <Motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
                     <ProjectCard project={project} />
-                  </motion.div>
+                  </Motion.div>
                 ))}
-              </motion.div>
+              </Motion.div>
             )}
           </AnimatePresence>
         </div>

@@ -42,7 +42,7 @@ const Achievements = () => {
                         </div>
                         <ul className="space-y-4">
                             <li className="flex flex-col space-y-1">
-                                <span className="text-white font-medium">HackArena 2.0 Hackathon – Top 5 Finalist</span>
+                                <span className="text-white font-medium">HackArena 2.0 Hackathon - Top 5 Finalist</span>
                                 <span className="text-slate-400 text-sm">Platform Commons, Masai</span>
                                 <p className="text-slate-500 text-sm mt-1">Selected among top teams for building a scalable full-stack solution under time constraints.</p>
                                 <a href="https://drive.google.com/file/d/1Xsl5rlXFXjmuAVPtsxi_nevv1xjsZ2QW/view?usp=sharing" target="_blank" className="text-violet-400 text-sm hover:underline">View Certificate</a>

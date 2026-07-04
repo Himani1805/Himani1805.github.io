@@ -1,6 +1,6 @@
 import React from "react";
 import emailjs from "emailjs-com";
-import { Send } from "lucide-react"; // assuming you use lucide-react icons
+import { Send } from "lucide-react";
 
 const ContactForm = () => {
     const sendEmail = (e) => {
@@ -42,7 +42,7 @@ const ContactForm = () => {
                         <input
                             type="text"
                             id="name"
-                            name="name"   // ✅ added for EmailJS
+                            name="name"
                             className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
                             placeholder="John Doe"
                             required
@@ -58,7 +58,7 @@ const ContactForm = () => {
                         <input
                             type="email"
                             id="email"
-                            name="email"   // ✅ added
+                            name="email"
                             className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
                             placeholder="john@example.com"
                             required
@@ -76,7 +76,7 @@ const ContactForm = () => {
                     <input
                         type="text"
                         id="subject"
-                        name="subject"   // ✅ added
+                        name="subject"
                         className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
                         placeholder="Project Inquiry"
                         required
@@ -92,7 +92,7 @@ const ContactForm = () => {
                     </label>
                     <textarea
                         id="message"
-                        name="message"   // ✅ added
+                        name="message"
                         rows="4"
                         className="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all resize-none"
                         placeholder="Tell me about your project..."
@@ -101,7 +101,7 @@ const ContactForm = () => {
                 </div>
 
                 <button
-                    type="submit"   // ✅ changed from "button" to "submit"
+                    type="submit"
                     className="w-full py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold rounded-xl shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
                 >
                     Send Message <Send size={18} />

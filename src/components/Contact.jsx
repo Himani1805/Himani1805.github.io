@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import React from 'react';
+import { Mail, MapPin, Phone, Github, Linkedin } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const Contact = () => {
@@ -33,7 +33,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-white">Email Me</h4>
-                                        <p className="text-slate-400">hinusharma18@gmail.com</p>
+                                        <p className="text-slate-400 break-all">hinusharma18@gmail.com</p>
                                     </div>
                                 </div>
 
@@ -62,10 +62,10 @@ const Contact = () => {
                         <div className="mt-8 pt-8 border-t border-slate-800">
                             <h4 className="font-semibold text-white mb-4">Follow Me</h4>
                             <div className="flex gap-4">
-                                <a href="https://github.com/Himani1805" target="_blank" className="p-3 bg-slate-800 rounded-lg text-slate-400 hover:text-white hover:bg-violet-600 transition-all duration-300">
+                                <a href="https://github.com/Himani1805" target="_blank" rel="noreferrer" className="p-3 bg-slate-800 rounded-lg text-slate-400 hover:text-white hover:bg-violet-600 transition-all duration-300">
                                     <Github size={20} />
                                 </a>
-                                <a href="https://www.linkedin.com/in/himani1805" target="_blank" className="p-3 bg-slate-800 rounded-lg text-slate-400 hover:text-white hover:bg-violet-600 transition-all duration-300">
+                                <a href="https://www.linkedin.com/in/himani1805" target="_blank" rel="noreferrer" className="p-3 bg-slate-800 rounded-lg text-slate-400 hover:text-white hover:bg-violet-600 transition-all duration-300">
                                     <Linkedin size={20} />
                                 </a>
                             </div>

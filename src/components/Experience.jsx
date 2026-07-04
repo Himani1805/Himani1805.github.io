@@ -7,21 +7,21 @@ const Experience = () => {
             type: "work",
             role: "Executive Assistant",
             company: "Sharda University",
-            period: "Jun 2023 – Mar 2025",
+            period: "Jun 2023 - Mar 2025",
             description: "Managed academic data (ERP), faculty scheduling, and compliance workflows to ensure operational efficiency."
         },
         {
             type: "work",
             role: "Administrative Coordinator",
             company: "ITS College",
-            period: "Aug 2020 – Jun 2023",
+            period: "Aug 2020 - Jun 2023",
             description: "Oversaw admissions data, faculty records, and departmental event coordination ensuring data integrity."
         },
         {
             type: "work",
             role: "Sales & Marketing",
             company: "M+R Logistics (Spedag Group)",
-            period: "Jun 2017 – Jul 2020",
+            period: "Jun 2017 - Jul 2020",
             description: "Managed client databases, sales inquiries, and global logistics documentation workflows across global markets."
         }
     ];

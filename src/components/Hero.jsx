@@ -2,21 +2,26 @@ import React from 'react';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = ({ setActiveSection }) => {
+  const navigateToSection = (section) => {
+    window.location.hash = section;
+    setActiveSection(section);
+  };
+
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div className="absolute inset-0 bg-[#0B1121]"></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-emerald-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(800px,120vw)] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-[min(600px,110vw)] h-[600px] bg-emerald-600/5 rounded-full blur-[120px] pointer-events-none"></div>
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
       </div>
 
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-5 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
         {/* Text Content */}
         <div className="text-center md:text-left space-y-6">
-          <div className="inline-block px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-violet-400 text-sm font-medium mb-4">
+          <div className="inline-block max-w-full px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-violet-400 text-xs sm:text-sm font-medium mb-4">
             Available for freelance & full-time roles
           </div>
           {/* 23 line code  text-5xl md:text-7xl font-bold font-display leading-tight           */}
@@ -33,14 +38,14 @@ const Hero = ({ setActiveSection }) => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
             <button
-              onClick={() => setActiveSection('contact')}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-indigo-600 to-emerald-600 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
+              onClick={() => navigateToSection('contact')}
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-indigo-600 to-emerald-600 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
             >
               Contact Me <ArrowRight size={20} />
             </button>
             <button
-              onClick={() => setActiveSection('projects')}
-              className="px-8 py-3.5 rounded-full bg-slate-800 text-white border border-slate-700 hover:bg-slate-700 hover:border-slate-600 transition-all duration-300 font-medium"
+              onClick={() => navigateToSection('projects')}
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-slate-800 text-white border border-slate-700 hover:bg-slate-700 hover:border-slate-600 transition-all duration-300 font-medium"
             >
               View Projects
             </button>

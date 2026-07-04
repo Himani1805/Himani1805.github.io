@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = ({ activeSection, visibleSection }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,13 @@ const Navbar = ({ activeSection, visibleSection }) => {
         { name: 'Contact', href: '#contact' },
     ];
 
-    const currentSection = activeSection === 'home' ? visibleSection : activeSection;
+    const sectionAliases = {
+        hero: 'home',
+        achievements: 'skills',
+        education: 'experience',
+    };
+    const rawCurrentSection = activeSection === 'home' ? visibleSection : activeSection;
+    const currentSection = sectionAliases[rawCurrentSection] || rawCurrentSection;
 
     return (
         <nav
@@ -32,7 +38,7 @@ const Navbar = ({ activeSection, visibleSection }) => {
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <a
                     href="#home"
-                    className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent font-display focus:outline-none"
+                    className="shrink-0 text-2xl font-bold bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent font-display focus:outline-none"
                     onClick={() => setIsOpen(false)}
                 >
                     HS.
@@ -68,8 +74,10 @@ const Navbar = ({ activeSection, visibleSection }) => {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+                    className="md:hidden text-gray-300 hover:text-white focus:outline-none p-2 -mr-2"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-label={isOpen ? 'Close menu' : 'Open menu'}
+                    aria-expanded={isOpen}
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -77,7 +85,7 @@ const Navbar = ({ activeSection, visibleSection }) => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-xl border-t border-slate-800 p-4">
+                <div className="md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-xl border-t border-slate-800 p-4 shadow-xl">
                     <div className="flex flex-col space-y-4">
                         {navLinks.map((link) => {
                             const sectionId = link.href.replace('#', '');
@@ -95,6 +103,15 @@ const Navbar = ({ activeSection, visibleSection }) => {
                                 </a>
                             );
                         })}
+                        <a
+                            href="https://drive.google.com/file/d/1ZfRo7SdhSFStKxOpnSnmyZlwr7o09Unc/view?usp=sharing"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="block py-2 text-center text-sm font-medium text-violet-300 hover:text-white"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Resume
+                        </a>
                     </div>
                 </div>
             )}
